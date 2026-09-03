@@ -1,0 +1,57 @@
+@let item = project();
+
+<article
+  class="group flex h-full flex-col rounded-3xl border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_24px_60px_-36px_rgba(33,29,24,0.5)] sm:p-8"
+>
+  <div class="flex flex-wrap items-center justify-between gap-3 text-sm text-muted">
+    <span class="font-semibold text-accent">
+      {{ item.category }}
+    </span>
+
+    <span>{{ item.period }}</span>
+  </div>
+
+  <h3 class="mt-5 font-display text-3xl leading-tight font-bold text-ink">
+    {{ item.title }}
+  </h3>
+
+  <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
+    <span>{{ item.team }}</span>
+    <span>{{ item.status }}</span>
+  </div>
+
+  <p class="mt-6 leading-7 text-muted">
+    {{ item.summary }}
+  </p>
+
+  <div class="mt-6 rounded-2xl bg-canvas p-5">
+    <p class="text-sm font-semibold uppercase tracking-[0.14em] text-accent">Minha atuação</p>
+
+    <p class="mt-2 leading-7 text-muted">
+      {{ item.contribution }}
+    </p>
+  </div>
+
+  <ul class="mt-6 flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
+    @for (technology of item.technologies; track technology) {
+      <li class="rounded-full border border-line px-3 py-1 text-sm text-muted">
+        {{ technology }}
+      </li>
+    }
+  </ul>
+
+  <div class="mt-auto flex flex-wrap gap-x-5 gap-y-3 border-t border-line pt-6">
+    @for (link of item.links; track link.url) {
+      <a
+        class="font-semibold text-accent transition-colors hover:text-accent-dark"
+        [href]="link.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.aria-label]="link.label + ': ' + item.title"
+      >
+        {{ link.label }}
+        <span aria-hidden="true">↗</span>
+      </a>
+    }
+  </div>
+</article>

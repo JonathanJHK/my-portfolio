@@ -1,0 +1,26 @@
+<section id="projetos" class="scroll-mt-20 bg-canvas" aria-labelledby="projects-title">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+          Projetos selecionados
+        </p>
+
+        <h2 id="projects-title" class="mt-4 font-display text-4xl font-bold text-ink sm:text-5xl">
+          Produtos que mostram como trabalho.
+        </h2>
+      </div>
+
+      <p class="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+        Projetos profissionais e técnicos que reúnem desenvolvimento de interfaces, integração com
+        APIs, regras de negócio, bancos de dados e decisões de experiência do usuário.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      @for (project of projects; track project.slug) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>
