@@ -11,6 +11,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     providePrimeNG({
+      license:
+        'eyJpZCI6IjhmZTQ2ZGJhLTFlMjUtNDBjMi1iOTIwLTQ4OWRkY2RmMTE4YSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODg0NTA4OTIsImV4cCI6MTgxOTk4Njg5Mn0.YZByORBklJnCO2wJdZ-iSFTK1fi8Q0B2dpxo1pNYfS_diN7VIt0TFWhzTF8RZlsl7DXHRV4aBLcR8MGyeG6tBg',
       theme: {
         preset: PortfolioPreset,
         options: {

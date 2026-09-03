@@ -4,8 +4,15 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/home/pages/home/home').then((component) => component.Home),
-    title: 'Jonathan Kinjo | Desenvolvedor de Software',
+      import('./layout/site-layout/site-layout').then((component) => component.SiteLayout),
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./features/home/pages/home/home').then((component) => component.Home),
+        title: 'Jonathan Kinjo | Desenvolvedor Web',
+      },
+    ],
   },
   {
     path: '**',
