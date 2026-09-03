@@ -1,0 +1,45 @@
+<section id="sobre" class="border-y border-line bg-surface">
+  <div class="mx-auto grid max-w-6xl gap-14 px-6 py-20 lg:grid-cols-[1.25fr_0.75fr] lg:py-28">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Sobre mim</p>
+
+      <h2 class="mt-4 font-display text-4xl leading-tight font-bold text-ink sm:text-5xl">
+        Autonomia para aprender e responsabilidade para entregar.
+      </h2>
+
+      <div class="mt-7 max-w-3xl space-y-5 text-lg leading-8 text-muted">
+        <p>
+          Minha trajetória começou em uma empresa pequena, dentro de uma equipe de tecnologia
+          formada por três pessoas. Esse ambiente me incentivou a estudar, buscar soluções e
+          participar de diferentes etapas do desenvolvimento de produtos digitais.
+        </p>
+
+        <p>
+          Ao longo desse caminho, trabalhei com aplicações web, integrações com APIs REST, bancos de
+          dados e dashboards. Também atuei em projetos de áreas como saúde, meio ambiente, delivery
+          e gestão institucional.
+        </p>
+
+        <p>
+          Hoje busco oportunidades em que possa contribuir com essa experiência prática, colaborar
+          com profissionais de diferentes níveis e continuar evoluindo como desenvolvedor de
+          software.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+      @for (highlight of careerHighlights; track highlight.label) {
+        <article class="rounded-2xl border border-line bg-canvas p-6">
+          <strong class="font-display block text-2xl text-accent">
+            {{ highlight.value }}
+          </strong>
+
+          <p class="mt-2 leading-7 text-muted">
+            {{ highlight.label }}
+          </p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
