@@ -1,9 +1,22 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-
+import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { PortfolioPreset } from './theme/portfolio-preset';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideRouter(routes),
+    provideClientHydration(),
+    providePrimeNG({
+      theme: {
+        preset: PortfolioPreset,
+        options: {
+          darkModeSelector: '.app-dark',
+        },
+      },
+    }),
+  ],
 };
