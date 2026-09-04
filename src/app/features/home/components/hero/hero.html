@@ -25,26 +25,41 @@
       </p>
 
       <div class="mt-9 flex flex-wrap gap-3">
-        <a pButton href="#projetos">Conhecer projetos</a>
+        <a pButton href="#projetos">
+          <i class="pi pi-folder-open" aria-hidden="true"></i>
+          <span>Conhecer projetos</span>
+        </a>
 
         <a
           pButton
+          class="hero-action hero-action--resume"
+          href="documents/curriculo-jonathan-kinjo.pdf"
+          download="Curriculo-Jonathan-Kinjo.pdf"
+        >
+          <i class="pi pi-download" aria-hidden="true"></i>
+          <span>Baixar currículo</span>
+        </a>
+
+        <a
+          pButton
+          class="hero-action hero-action--github"
           href="https://github.com/JonathanJHK"
           target="_blank"
           rel="noopener noreferrer"
-          severity="secondary"
-          [outlined]="true"
         >
-          Ver GitHub
+          <i class="pi pi-github" aria-hidden="true"></i>
+          <span>GitHub</span>
         </a>
+
         <a
           pButton
-          href="documents/jonathan-kinjo-curriculo.pdf"
-          download
-          severity="contrast"
-          [outlined]="true"
+          class="hero-action hero-action--linkedin"
+          href="https://www.linkedin.com/in/jonathanhkinjo"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Baixar currículo
+          <i class="pi pi-linkedin" aria-hidden="true"></i>
+          <span>LinkedIn</span>
         </a>
       </div>
     </div>

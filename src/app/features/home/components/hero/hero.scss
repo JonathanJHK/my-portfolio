@@ -1,3 +1,62 @@
 :host {
   display: block;
 }
+
+.hero-action {
+  border-width: 2px;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.hero-action--projects {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-surface);
+
+  &:hover {
+    border-color: var(--color-accent-dark);
+    background: var(--color-accent-dark);
+  }
+}
+
+.hero-action--resume {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-surface);
+
+  &:hover {
+    border-color: #3d352d;
+    background: #3d352d;
+    box-shadow: 0 8px 20px rgb(33 29 24 / 20%);
+  }
+}
+
+.hero-action--github {
+  border-color: #24292f;
+  background: var(--color-surface);
+  color: #24292f;
+
+  &:hover {
+    background: #24292f;
+    color: #ffffff;
+  }
+}
+
+.hero-action--linkedin {
+  border-color: #0a66c2;
+  background: var(--color-surface);
+  color: #0a66c2;
+
+  &:hover {
+    background: #0a66c2;
+    color: #ffffff;
+  }
+}
