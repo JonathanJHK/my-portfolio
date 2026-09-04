@@ -1,0 +1,247 @@
+<main class="bg-canvas">
+  @if (project(); as item) {
+    <section class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
+      <a
+        class="font-semibold text-accent hover:text-accent-dark"
+        routerLink="/"
+        fragment="projetos"
+      >
+        ← Voltar aos projetos
+      </a>
+
+      <div class="mt-12 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            {{ item.category }}
+          </p>
+
+          <h1 class="mt-4 font-display text-5xl leading-tight font-bold text-ink sm:text-6xl">
+            {{ item.title }}
+          </h1>
+
+          <p class="mt-6 text-lg leading-8 text-muted">
+            {{ item.summary }}
+          </p>
+
+          <ul class="mt-7 flex flex-wrap gap-2" aria-label="Áreas do projeto">
+            @for (area of item.areas; track area) {
+              <li class="rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-muted">
+                {{ area }}
+              </li>
+            }
+          </ul>
+        </div>
+
+        <figure class="aspect-video overflow-hidden rounded-3xl border border-line bg-surface">
+          <img
+            class="h-full w-full object-cover object-top"
+            [src]="item.cover.src"
+            [alt]="item.cover.alt"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="border-y border-line bg-surface">
+      <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Minha atuação</p>
+
+          <h2 class="mt-4 font-display text-4xl font-bold text-ink">Contribuição no projeto</h2>
+
+          <p class="mt-6 text-lg leading-8 text-muted">
+            {{ item.contribution }}
+          </p>
+        </div>
+
+        <dl class="grid gap-5 rounded-3xl border border-line bg-canvas p-7">
+          <div>
+            <dt class="text-sm font-semibold text-accent">Período</dt>
+            <dd class="mt-1 text-ink">{{ item.period }}</dd>
+          </div>
+
+          <div>
+            <dt class="text-sm font-semibold text-accent">Equipe</dt>
+            <dd class="mt-1 text-ink">{{ item.team }}</dd>
+          </div>
+
+          <div>
+            <dt class="text-sm font-semibold text-accent">Situação</dt>
+            <dd class="mt-1 text-ink">{{ item.status }}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
+      <div class="grid gap-5 md:grid-cols-2">
+        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Contexto</p>
+
+          <h2 class="mt-4 font-display text-3xl font-bold text-ink">
+            Por que o projeto foi criado
+          </h2>
+
+          <p class="mt-5 leading-7 text-muted">
+            {{ item.caseStudy.context }}
+          </p>
+        </article>
+
+        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Desafio</p>
+
+          <h2 class="mt-4 font-display text-3xl font-bold text-ink">O problema enfrentado</h2>
+
+          <p class="mt-5 leading-7 text-muted">
+            {{ item.caseStudy.challenge }}
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-5 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Solução</p>
+
+          <h2 class="mt-4 font-display text-3xl font-bold text-ink">Como desenvolvi a solução</h2>
+
+          <p class="mt-5 leading-7 text-muted">
+            {{ item.caseStudy.solution }}
+          </p>
+        </article>
+
+        <aside
+          class="rounded-3xl bg-ink p-7 text-surface sm:p-8"
+          aria-labelledby="highlights-title"
+        >
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-soft">
+            Principais entregas
+          </p>
+
+          <h2 id="highlights-title" class="mt-4 font-display text-3xl font-bold">
+            Funcionalidades em destaque
+          </h2>
+
+          <ul class="mt-6 grid gap-3 text-surface/80">
+            @for (highlight of item.caseStudy.highlights; track highlight) {
+              <li class="flex gap-3">
+                <span class="text-accent-soft" aria-hidden="true">•</span>
+                <span>{{ highlight }}</span>
+              </li>
+            }
+          </ul>
+        </aside>
+      </div>
+
+      <article class="mt-5 rounded-3xl border border-accent/30 bg-accent-soft p-7 sm:p-8">
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-dark">
+          Aprendizados
+        </p>
+
+        <h2 class="mt-4 font-display text-3xl font-bold text-ink">
+          O que esse projeto acrescentou
+        </h2>
+
+        <p class="mt-5 max-w-4xl leading-7 text-ink/80">
+          {{ item.caseStudy.learnings }}
+        </p>
+      </article>
+    </section>
+
+    @if (item.gallery.length) {
+      <section class="border-y border-line bg-surface" aria-labelledby="gallery-title">
+        <div class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Galeria</p>
+
+          <h2 id="gallery-title" class="mt-4 font-display text-4xl font-bold text-ink">
+            Telas e estrutura do projeto
+          </h2>
+
+          <p class="mt-5 max-w-2xl leading-7 text-muted">
+            Imagens selecionadas para demonstrar as principais funcionalidades e decisões técnicas.
+          </p>
+
+          <div class="mt-10 grid grid-cols-[repeat(auto-fit,minmax(min(100%,28rem),1fr))] gap-6">
+            @for (image of item.gallery; track image.src) {
+              <a
+                class="group overflow-hidden rounded-3xl border border-line bg-canvas transition hover:border-accent/50"
+                [href]="image.src"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="'Abrir imagem: ' + image.alt"
+              >
+                <figure>
+                  <div class="aspect-video overflow-hidden border-b border-line">
+                    <img
+                      class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                      [src]="image.src"
+                      [alt]="image.alt"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  @if (image.caption) {
+                    <figcaption class="p-5 leading-7 text-muted">
+                      {{ image.caption }}
+                    </figcaption>
+                  }
+                </figure>
+              </a>
+            }
+          </div>
+        </div>
+      </section>
+    }
+
+    <section class="mx-auto max-w-6xl px-6 py-16 lg:py-20">
+      <h2 class="font-display text-4xl font-bold text-ink">Tecnologias utilizadas</h2>
+
+      <ul class="mt-7 flex flex-wrap gap-3">
+        @for (technology of item.technologies; track technology) {
+          <li class="rounded-full border border-line bg-surface px-4 py-2 text-muted">
+            {{ technology }}
+          </li>
+        }
+      </ul>
+
+      @if (item.links.length) {
+        <div class="mt-10 flex flex-wrap gap-4">
+          @for (link of item.links; track link.url) {
+            <a
+              class="rounded-full bg-accent px-5 py-3 font-semibold text-surface transition-colors hover:bg-accent-dark"
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ link.label }} ↗
+            </a>
+          }
+        </div>
+      }
+    </section>
+  } @else {
+    <section class="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+        Projeto não encontrado
+      </p>
+
+      <h1 class="mt-4 font-display text-5xl font-bold text-ink">
+        Este projeto não está disponível.
+      </h1>
+
+      <p class="mt-6 text-lg text-muted">
+        Verifique o endereço ou retorne para conhecer os projetos publicados.
+      </p>
+
+      <a
+        class="mt-8 inline-flex rounded-full bg-accent px-5 py-3 font-semibold text-surface hover:bg-accent-dark"
+        routerLink="/"
+        fragment="projetos"
+      >
+        Voltar aos projetos
+      </a>
+    </section>
+  }
+</main>

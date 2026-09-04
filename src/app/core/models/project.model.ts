@@ -10,6 +10,14 @@ export interface ProjectLink {
   readonly url: string;
 }
 
+export interface ProjectCaseStudy {
+  readonly context: string;
+  readonly challenge: string;
+  readonly solution: string;
+  readonly highlights: readonly string[];
+  readonly learnings: string;
+}
+
 export interface PortfolioProject {
   readonly slug: ProjectSlug;
   readonly title: string;
@@ -23,9 +31,12 @@ export interface PortfolioProject {
   readonly technologies: readonly string[];
   readonly links: readonly ProjectLink[];
   readonly cover: ProjectImage;
+  readonly caseStudy: ProjectCaseStudy;
+  readonly gallery: readonly ProjectImage[];
 }
 
 export interface ProjectImage {
   readonly src: string;
   readonly alt: string;
+  readonly caption?: string;
 }

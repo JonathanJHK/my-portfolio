@@ -30,6 +30,33 @@ export const PROJECTS = [
       src: 'images/projects/gestao-fisioterapia/cover.webp',
       alt: 'Interface da plataforma de gestão para fisioterapia',
     },
+    caseStudy: {
+      context:
+        'A plataforma foi criada para reunir em um único ambiente a gestão de agendamentos, atendimentos, produtos e serviços oferecidos por profissionais de fisioterapia.',
+
+      challenge:
+        'Transformar o design definido no Figma em uma aplicação web responsiva, integrar diferentes fluxos à API Spring Boot e estabelecer uma estrutura moderna desde o início do desenvolvimento.',
+
+      solution:
+        'Desenvolvi praticamente todo o Front-end utilizando Angular 17, PrimeNG e PrimeFlex. Organizei componentes, serviços, validações e integrações por responsabilidades, buscando reduzir duplicações e facilitar a manutenção.',
+
+      highlights: [
+        'Agendamentos e modalidades de atendimento',
+        'Gestão de produtos e serviços',
+        'Interface responsiva baseada no Figma',
+        'Integração com API Spring Boot',
+      ],
+
+      learnings:
+        'O projeto marcou minha evolução na organização do código. Depois de trabalhar com sistemas mais antigos e legados, pude aplicar uma estrutura mais limpa, componentização e boas práticas desde o começo.',
+    },
+    gallery: [
+      {
+        src: '/images/projects/gestao-fisioterapia/architecture.svg',
+        alt: 'Diagrama da arquitetura da plataforma de gestão para fisioterapia',
+        caption: 'Organização do Front-end e integração com a API Spring Boot.',
+      },
+    ],
   },
   {
     slug: 'monitoramento-incendios',
@@ -63,6 +90,54 @@ export const PROJECTS = [
       src: 'images/projects/monitoramento-incendios/cover.webp',
       alt: 'Dashboard da plataforma de monitoramento de incêndios',
     },
+    caseStudy: {
+      context:
+        'A solução permite que empresas e associados registrem ocorrências de incêndio e acompanhem os dados por meio de formulários, filtros, relatórios e painéis.',
+
+      challenge:
+        'Construir uma aplicação com diferentes perfis de acesso, formulários extensos, visualização de dados e notificações sem um design pronto para seguir.',
+
+      solution:
+        'Criei o design e desenvolvi todo o Front-end com Angular. Estruturei autenticação, guards, interceptors, formulários, tabelas paginadas, filtros e gráficos. Posteriormente, também realizei correções e evoluções no Back-end.',
+
+      highlights: [
+        'Dashboard com indicadores e gráficos',
+        'Controle de acesso por perfil',
+        'Cadastro e acompanhamento de ocorrências',
+        'Relatórios e notificações',
+        'Temas claro e escuro',
+      ],
+
+      learnings:
+        'Esse projeto ampliou minha visão sobre o produto completo, desde a criação da interface até a integração com APIs, persistência de dados e manutenção do Back-end.',
+    },
+    gallery: [
+      {
+        src: '/images/projects/monitoramento-incendios/dashboard-light.webp',
+        alt: 'Dashboard de ocorrências no tema claro',
+        caption: 'Dashboard com indicadores, filtros e gráficos de acompanhamento.',
+      },
+      {
+        src: '/images/projects/monitoramento-incendios/occurrence-form-light.webp',
+        alt: 'Formulário de cadastro de ocorrência no tema claro',
+        caption: 'Formulário para registrar informações mensais sobre ocorrências.',
+      },
+      {
+        src: '/images/projects/monitoramento-incendios/member-create-light.webp',
+        alt: 'Formulário de cadastro de membro no tema claro',
+        caption: 'Cadastro de membros vinculados à plataforma.',
+      },
+      {
+        src: '/images/projects/monitoramento-incendios/notification-create-dark.webp',
+        alt: 'Cadastro de notificação no tema escuro',
+        caption: 'Criação de notificações simples ou recorrentes no tema escuro.',
+      },
+      {
+        src: '/images/projects/monitoramento-incendios/architecture.svg',
+        alt: 'Diagrama da arquitetura da plataforma de monitoramento',
+        caption: 'Integração entre Front-end, API e banco de dados.',
+      },
+    ],
   },
   {
     slug: 'gestao-fiscal',
@@ -97,5 +172,58 @@ export const PROJECTS = [
       src: 'images/projects/gestao-fiscal/cover.webp',
       alt: 'Interface do sistema de estoque e emissão de notas fiscais',
     },
+    caseStudy: {
+      context:
+        'Projeto desenvolvido individualmente como desafio técnico para representar um fluxo de estoque e faturamento dividido entre diferentes serviços.',
+
+      challenge:
+        'Entregar em um prazo curto uma solução Full Stack funcional, mantendo consistência do estoque e evitando que uma mesma operação fosse processada mais de uma vez.',
+
+      solution:
+        'Desenvolvi o Front-end em Angular e dois microsserviços em .NET, utilizando PostgreSQL e Docker. No processo de baixa de estoque, apliquei transação, controle de concorrência e idempotência.',
+
+      highlights: [
+        'Cadastro e consulta de produtos',
+        'Criação de notas fiscais com múltiplos itens',
+        'Baixa automática de estoque',
+        'Idempotência e controle de concorrência',
+        'Ambiente organizado com Docker',
+      ],
+
+      learnings:
+        'O desafio fortaleceu meus conhecimentos em arquitetura distribuída, integração entre serviços, regras de negócio e tratamento de cenários que poderiam causar inconsistência nos dados.',
+    },
+    gallery: [
+      {
+        src: '/images/projects/gestao-fiscal/products-list.webp',
+        alt: 'Listagem de produtos e estoque',
+        caption: 'Consulta dos produtos e respectivos saldos em estoque.',
+      },
+      {
+        src: '/images/projects/gestao-fiscal/product-create-dialog.webp',
+        alt: 'Janela de cadastro de produto',
+        caption: 'Cadastro de produto utilizando um dialog do PrimeNG.',
+      },
+      {
+        src: '/images/projects/gestao-fiscal/invoices-list.webp',
+        alt: 'Listagem de notas fiscais',
+        caption: 'Notas fiscais organizadas por status e data de emissão.',
+      },
+      {
+        src: '/images/projects/gestao-fiscal/new-invoice.webp',
+        alt: 'Formulário de criação de nota fiscal',
+        caption: 'Criação de uma nota fiscal com vários produtos e quantidades.',
+      },
+      {
+        src: '/images/projects/gestao-fiscal/invoice-details.webp',
+        alt: 'Detalhes de uma nota fiscal',
+        caption: 'Visualização dos produtos e quantidades registrados na nota.',
+      },
+      {
+        src: '/images/projects/gestao-fiscal/architecture.svg',
+        alt: 'Diagrama da arquitetura do sistema de gestão fiscal',
+        caption: 'Integração entre Angular, microsserviços .NET e PostgreSQL.',
+      },
+    ],
   },
 ] as const satisfies readonly PortfolioProject[];

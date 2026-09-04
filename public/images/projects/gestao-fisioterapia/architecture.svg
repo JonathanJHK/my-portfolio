@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Arquitetura do Front-end do FASTFISIO</title>
+  <desc id="description">Fluxo entre perfis de acesso, aplicação Angular 17 organizada em core, features e shared, e API REST em Spring Boot.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B84628"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" rx="36" fill="#F6F1E9"/>
+  <text x="100" y="100" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Arquitetura da solução</text>
+  <text x="100" y="145" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="23">FASTFISIO · gestão de atendimentos em fisioterapia</text>
+
+  <rect x="100" y="245" width="275" height="325" rx="24" fill="#211D18"/>
+  <text x="237" y="302" text-anchor="middle" fill="#F2D4C8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">PERFIS DE ACESSO</text>
+  <rect x="137" y="345" width="200" height="55" rx="16" fill="#39322B"/>
+  <rect x="137" y="425" width="200" height="55" rx="16" fill="#39322B"/>
+  <rect x="137" y="505" width="200" height="55" rx="16" fill="#39322B"/>
+  <text x="237" y="380" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Administrador</text>
+  <text x="237" y="460" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Profissional</text>
+  <text x="237" y="540" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Cliente</text>
+
+  <rect x="475" y="210" width="545" height="420" rx="24" fill="#FFFAF2" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="510" y="245" width="132" height="38" rx="19" fill="#F2D4C8"/>
+  <text x="576" y="271" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">FRONT-END</text>
+  <text x="510" y="340" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">Angular 17</text>
+  <text x="510" y="385" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">PrimeNG · PrimeFlex · RxJS</text>
+
+  <rect x="510" y="425" width="138" height="120" rx="18" fill="#F6F1E9" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="678" y="425" width="138" height="120" rx="18" fill="#F6F1E9" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="846" y="425" width="138" height="120" rx="18" fill="#F6F1E9" stroke="#DED3C4" stroke-width="2"/>
+  <text x="579" y="470" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">core</text>
+  <text x="579" y="502" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="16">guards</text>
+  <text x="579" y="526" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="16">interceptors</text>
+  <text x="747" y="470" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">features</text>
+  <text x="747" y="498" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="15">agendamentos</text>
+  <text x="747" y="520" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="15">produtos · serviços</text>
+  <text x="915" y="470" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">shared</text>
+  <text x="915" y="498" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="15">componentes</text>
+  <text x="915" y="520" text-anchor="middle" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="15">services · validators</text>
+
+  <rect x="1120" y="245" width="380" height="325" rx="24" fill="#FFFAF2" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="1155" y="280" width="116" height="38" rx="19" fill="#F2D4C8"/>
+  <text x="1213" y="306" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">BACK-END</text>
+  <text x="1155" y="375" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="700">Spring Boot</text>
+  <text x="1155" y="422" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">API REST</text>
+  <text x="1155" y="462" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Autenticação e perfis</text>
+  <text x="1155" y="502" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Regras e dados do produto</text>
+
+  <path d="M 375 405 L 475 405" fill="none" stroke="#B84628" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M 1020 405 L 1120 405" fill="none" stroke="#B84628" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="1070" y="380" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">API REST</text>
+
+  <rect x="100" y="690" width="900" height="115" rx="24" fill="#F2D4C8" stroke="#D8B4A5" stroke-width="2"/>
+  <text x="135" y="735" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">MINHA ATUAÇÃO</text>
+  <text x="135" y="775" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Implementação de praticamente todo o Front-end a partir do design fornecido</text>
+
+  <rect x="1080" y="690" width="420" height="115" rx="24" fill="#211D18"/>
+  <text x="1290" y="735" text-anchor="middle" fill="#F2D4C8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">FLUXOS PRINCIPAIS</text>
+  <text x="1290" y="775" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Agenda · serviços · produtos · perfis</text>
+</svg>

@@ -63,6 +63,14 @@
         {{ link.label }}
         <span aria-hidden="true">↗</span>
       </a>
+      <a
+        class="font-semibold text-accent transition-colors hover:text-accent-dark"
+        [routerLink]="['/projetos', item.slug]"
+        [attr.aria-label]="'Ver detalhes: ' + item.title"
+      >
+        Ver detalhes
+        <span aria-hidden="true">→</span>
+      </a>
     }
   </div>
 </article>

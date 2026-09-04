@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Arquitetura da plataforma Reflore</title>
+  <desc id="description">Fluxo entre os perfis de usuário, a aplicação Angular, a API NestJS e o PostgreSQL.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#B84628"/></marker></defs>
+  <rect width="1600" height="900" rx="36" fill="#F6F1E9"/>
+  <text x="100" y="100" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Arquitetura da solução</text>
+  <text x="100" y="145" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="23">Reflore · aplicação Full Stack para monitoramento de ocorrências</text>
+
+  <rect x="100" y="250" width="260" height="315" rx="24" fill="#211D18"/>
+  <rect x="465" y="215" width="400" height="385" rx="24" fill="#FFFAF2" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="970" y="215" width="400" height="385" rx="24" fill="#FFFAF2" stroke="#DED3C4" stroke-width="2"/>
+  <rect x="1150" y="690" width="350" height="115" rx="24" fill="#211D18"/>
+
+  <text x="230" y="305" text-anchor="middle" fill="#F2D4C8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">PERFIS DE ACESSO</text>
+  <rect x="135" y="345" width="190" height="52" rx="16" fill="#39322B"/><rect x="135" y="419" width="190" height="52" rx="16" fill="#39322B"/><rect x="135" y="493" width="190" height="52" rx="16" fill="#39322B"/>
+  <text x="230" y="378" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Visitante</text>
+  <text x="230" y="452" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Membro</text>
+  <text x="230" y="526" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Administrador</text>
+
+  <rect x="500" y="250" width="132" height="38" rx="19" fill="#F2D4C8"/>
+  <text x="566" y="276" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">FRONT-END</text>
+  <text x="500" y="345" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Angular 19</text>
+  <text x="500" y="392" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Layouts por perfil + AuthGuard</text>
+  <text x="500" y="432" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Formulários, tabelas e filtros</text>
+  <text x="500" y="472" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Dashboards com ApexCharts</text>
+  <text x="500" y="512" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">RxJS e carregamento por rota</text>
+  <text x="500" y="552" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Temas claro e escuro</text>
+
+  <rect x="1005" y="250" width="116" height="38" rx="19" fill="#F2D4C8"/>
+  <text x="1063" y="276" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">BACK-END</text>
+  <text x="1005" y="345" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">NestJS 11</text>
+  <text x="1005" y="392" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Autenticação JWT e permissões</text>
+  <text x="1005" y="432" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Usuários e ocorrências</text>
+  <text x="1005" y="472" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Filtros, paginação e relatórios</text>
+  <text x="1005" y="512" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">Notificações e tarefas agendadas</text>
+  <text x="1005" y="552" fill="#6F6559" font-family="Inter, Arial, sans-serif" font-size="20">TypeORM e envio de e-mails</text>
+
+  <path d="M 360 405 L 465 405" fill="none" stroke="#B84628" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M 865 405 L 970 405" fill="none" stroke="#B84628" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="918" y="380" text-anchor="middle" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">API REST</text>
+  <path d="M 1170 600 L 1170 652 L 1325 652 L 1325 690" fill="none" stroke="#B84628" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="1325" y="735" text-anchor="middle" fill="#F2D4C8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">PERSISTÊNCIA</text>
+  <text x="1325" y="775" text-anchor="middle" fill="#FFFAF2" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="700">PostgreSQL</text>
+
+  <rect x="465" y="690" width="545" height="115" rx="24" fill="#F2D4C8" stroke="#D8B4A5" stroke-width="2"/>
+  <text x="500" y="735" fill="#8E321D" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">MINHA ATUAÇÃO</text>
+  <text x="500" y="775" fill="#211D18" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Design + Front-end completo + evolução do Back-end</text>
+</svg>
