@@ -162,35 +162,65 @@
             Imagens selecionadas para demonstrar as principais funcionalidades e decisões técnicas.
           </p>
 
-          <div class="mt-10 grid grid-cols-[repeat(auto-fit,minmax(min(100%,28rem),1fr))] gap-6">
-            @for (image of item.gallery; track image.src) {
-              <a
-                class="group overflow-hidden rounded-3xl border border-line bg-canvas transition hover:border-accent/50"
-                [href]="image.src"
-                target="_blank"
-                rel="noopener noreferrer"
-                [attr.aria-label]="'Abrir imagem: ' + image.alt"
+          @if (currentGalleryImage(); as currentImage) {
+            <button
+              type="button"
+              class="group mt-10 block w-full overflow-hidden rounded-3xl border border-line bg-canvas text-left transition hover:border-accent/50"
+              (click)="openImage(currentImage)"
+              [attr.aria-label]="'Ampliar imagem: ' + currentImage.alt"
+            >
+              <figure>
+                <div class="relative aspect-video overflow-hidden bg-canvas">
+                  <img
+                    class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.01]"
+                    [src]="currentImage.src"
+                    [alt]="currentImage.alt"
+                    decoding="async"
+                  />
+
+                  <span
+                    class="absolute right-4 bottom-4 rounded-full bg-ink/85 px-4 py-2 text-sm font-semibold text-surface opacity-100 transition sm:opacity-0 sm:group-hover:opacity-100"
+                    aria-hidden="true"
+                  >
+                    Ampliar imagem
+                  </span>
+                </div>
+
+                @if (currentImage.caption) {
+                  <figcaption class="border-t border-line bg-surface p-5 leading-7 text-muted">
+                    {{ currentImage.caption }}
+                  </figcaption>
+                }
+              </figure>
+            </button>
+
+            @if (item.gallery.length > 1) {
+              <div
+                class="mt-5 flex gap-4 overflow-x-auto px-1 pt-1 pb-3"
+                aria-label="Selecionar imagem do projeto"
               >
-                <figure>
-                  <div class="aspect-video overflow-hidden border-b border-line">
+                @for (image of item.gallery; track image.src) {
+                  <button
+                    type="button"
+                    class="shrink-0 rounded-2xl border border-line bg-canvas p-1 transition hover:border-accent"
+                    [class.ring-2]="currentGalleryImage()?.src === image.src"
+                    [class.ring-accent]="currentGalleryImage()?.src === image.src"
+                    [attr.aria-pressed]="currentGalleryImage()?.src === image.src"
+                    [attr.aria-label]="'Exibir imagem: ' + image.alt"
+                    (click)="selectGalleryImage(image)"
+                  >
                     <img
-                      class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                      class="aspect-video w-32 rounded-xl object-contain sm:w-40"
                       [src]="image.src"
                       [alt]="image.alt"
                       loading="lazy"
                       decoding="async"
                     />
-                  </div>
-
-                  @if (image.caption) {
-                    <figcaption class="p-5 leading-7 text-muted">
-                      {{ image.caption }}
-                    </figcaption>
-                  }
-                </figure>
-              </a>
+                  </button>
+                }
+              </div>
             }
-          </div>
+          }
         </div>
       </section>
     }
@@ -221,6 +251,68 @@
         </div>
       }
     </section>
+
+    <p-dialog
+      [visible]="selectedImage() !== null"
+      (visibleChange)="onDialogVisibilityChange($event)"
+      [header]="selectedImage()?.alt ?? 'Imagem do projeto'"
+      [modal]="true"
+      [dismissableMask]="true"
+      [draggable]="false"
+      [resizable]="false"
+      [blockScroll]="true"
+      [style]="{ width: 'min(94vw, 75rem)' }"
+      [breakpoints]="{ '640px': '96vw' }"
+      [contentStyle]="{ padding: '0' }"
+      closeAriaLabel="Fechar imagem"
+    >
+      @if (selectedImage(); as image) {
+        <figure class="bg-canvas">
+          <div class="relative flex min-h-72 items-center justify-center bg-canvas">
+            @if (item.gallery.length > 1) {
+              <button
+                type="button"
+                class="absolute left-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-ink/85 text-surface transition hover:bg-ink"
+                aria-label="Exibir imagem anterior"
+                (click)="showPreviousImage()"
+              >
+                <svg data-p-icon="chevron-left" [size]="20" aria-hidden="true"></svg>
+              </button>
+            }
+
+            <img class="max-h-[75vh] w-full object-contain" [src]="image.src" [alt]="image.alt" />
+
+            @if (item.gallery.length > 1) {
+              <button
+                type="button"
+                class="absolute right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-ink/85 text-surface transition hover:bg-ink"
+                aria-label="Exibir próxima imagem"
+                (click)="showNextImage()"
+              >
+                <svg data-p-icon="chevron-right" [size]="20" aria-hidden="true"></svg>
+              </button>
+            }
+          </div>
+
+          @if (image.caption || item.gallery.length > 1) {
+            <figcaption
+              class="flex flex-col gap-2 border-t border-line bg-surface p-5 leading-7 text-muted sm:flex-row sm:items-center sm:justify-between"
+            >
+              @if (image.caption) {
+                <span>{{ image.caption }}</span>
+              }
+
+              @if (item.gallery.length > 1) {
+                <span class="shrink-0 text-sm font-semibold text-accent">
+                  {{ selectedImageIndex() + 1 }} de
+                  {{ item.gallery.length }}
+                </span>
+              }
+            </figcaption>
+          }
+        </figure>
+      }
+    </p-dialog>
   } @else {
     <section class="mx-auto max-w-3xl px-6 py-24 text-center lg:py-32">
       <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
