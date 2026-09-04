@@ -22,4 +22,10 @@ export interface PortfolioProject {
   readonly areas: readonly ProjectArea[];
   readonly technologies: readonly string[];
   readonly links: readonly ProjectLink[];
+  readonly cover: ProjectImage;
+}
+
+export interface ProjectImage {
+  readonly src: string;
+  readonly alt: string;
 }

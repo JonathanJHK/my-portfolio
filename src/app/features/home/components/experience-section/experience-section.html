@@ -1,0 +1,67 @@
+<section
+  id="experiencia"
+  class="scroll-mt-20 border-y border-line bg-surface"
+  aria-labelledby="experience-title"
+>
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+        Experiência profissional
+      </p>
+
+      <h2 id="experience-title" class="mt-4 font-display text-4xl font-bold text-ink sm:text-5xl">
+        Uma trajetória construída entre desenvolvimento, produtos e dados.
+      </h2>
+    </div>
+
+    <ol class="mt-14 space-y-12">
+      @for (experience of experiences; track experience.organization) {
+        <li class="grid gap-5 md:grid-cols-[13rem_1fr] md:gap-10">
+          <p class="pt-1 text-sm font-semibold text-accent">
+            {{ experience.period }}
+          </p>
+
+          <article class="relative border-l border-line pl-7 md:pl-10">
+            <span
+              class="absolute top-2 -left-[0.4375rem] h-3 w-3 rounded-full bg-accent ring-4 ring-surface"
+              aria-hidden="true"
+            ></span>
+
+            <p class="font-semibold text-muted">
+              {{ experience.organization }}
+            </p>
+
+            <h3 class="mt-1 font-display text-3xl font-bold text-ink">
+              {{ experience.role }}
+            </h3>
+
+            <p class="mt-4 max-w-3xl leading-7 text-muted">
+              {{ experience.summary }}
+            </p>
+
+            <ul class="mt-6 space-y-3 text-ink">
+              @for (highlight of experience.highlights; track highlight) {
+                <li class="flex gap-3">
+                  <span
+                    class="mt-[0.65rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                    aria-hidden="true"
+                  ></span>
+
+                  <span>{{ highlight }}</span>
+                </li>
+              }
+            </ul>
+
+            <ul class="mt-7 flex flex-wrap gap-2" aria-label="Tecnologias e conhecimentos">
+              @for (technology of experience.technologies; track technology) {
+                <li class="rounded-full border border-line bg-canvas px-3 py-1 text-sm text-muted">
+                  {{ technology }}
+                </li>
+              }
+            </ul>
+          </article>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

@@ -26,6 +26,10 @@ export const PROJECTS = [
         url: 'https://github.com/JonathanJHK/Agendamento',
       },
     ],
+    cover: {
+      src: 'images/projects/gestao-fisioterapia/cover.webp',
+      alt: 'Interface da plataforma de gestão para fisioterapia',
+    },
   },
   {
     slug: 'monitoramento-incendios',
@@ -55,6 +59,10 @@ export const PROJECTS = [
         url: 'https://github.com/JonathanJHK/CadastroFormulario',
       },
     ],
+    cover: {
+      src: 'images/projects/monitoramento-incendios/cover.webp',
+      alt: 'Dashboard da plataforma de monitoramento de incêndios',
+    },
   },
   {
     slug: 'gestao-fiscal',
@@ -85,5 +93,9 @@ export const PROJECTS = [
         url: 'https://github.com/JonathanJHK/Korp_Teste_JonathanHeidyKinjo',
       },
     ],
+    cover: {
+      src: 'images/projects/gestao-fiscal/cover.webp',
+      alt: 'Interface do sistema de estoque e emissão de notas fiscais',
+    },
   },
 ] as const satisfies readonly PortfolioProject[];
