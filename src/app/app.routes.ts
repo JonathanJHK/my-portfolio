@@ -18,7 +18,6 @@ export const routes: Routes = [
           import('./features/projects/pages/project-detail/project-detail').then(
             (component) => component.ProjectDetail,
           ),
-        title: 'Projeto | Jonathan Kinjo',
       },
     ],
   },

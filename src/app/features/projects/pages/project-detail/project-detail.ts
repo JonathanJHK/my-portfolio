@@ -1,4 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { PROJECTS } from '@core/data/projects.data';
 import { ProjectImage } from '@core/models/project.model';
@@ -19,6 +28,9 @@ export class ProjectDetail {
   readonly slug = input.required<string>();
   protected readonly selectedImage = signal<ProjectImage | null>(null);
   protected readonly selectedGalleryImage = signal<ProjectImage | null>(null);
+
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
 
   // Busca o projeto correspondente ao slug informado na lista global de projetos.
   // O resultado é um valor computado, que reage automaticamente a mudanças no slug.
@@ -48,6 +60,46 @@ export class ProjectDetail {
 
     return gallery.findIndex((image) => image.src === selectedImage.src);
   });
+
+  protected readonly currentProjectIndex = computed(() =>
+    PROJECTS.findIndex((project) => project.slug === this.slug()),
+  );
+
+  protected readonly previousProject = computed(() => {
+    const index = this.currentProjectIndex();
+
+    if (index <= 0) {
+      return null;
+    }
+
+    return PROJECTS[index - 1] ?? null;
+  });
+
+  protected readonly nextProject = computed(() => {
+    const index = this.currentProjectIndex();
+
+    if (index < 0 || index >= PROJECTS.length - 1) {
+      return null;
+    }
+
+    return PROJECTS[index + 1] ?? null;
+  });
+
+  constructor() {
+    effect(() => {
+      const project = this.project();
+
+      const title = project
+        ? `${project.title} | Jonathan Kinjo`
+        : 'Projeto não encontrado | Jonathan Kinjo';
+
+      const description = project
+        ? project.summary
+        : 'O projeto solicitado não foi encontrado no portfólio de Jonathan Kinjo.';
+
+      this.updateMetadata(title, description);
+    });
+  }
 
   protected selectGalleryImage(image: ProjectImage): void {
     this.selectedGalleryImage.set(image);
@@ -96,5 +148,29 @@ export class ProjectDetail {
 
     this.selectedImage.set(nextImage);
     this.selectedGalleryImage.set(nextImage);
+  }
+
+  private updateMetadata(title: string, description: string): void {
+    this.titleService.setTitle(title);
+
+    this.metaService.updateTag({
+      name: 'description',
+      content: description,
+    });
+
+    this.metaService.updateTag({
+      property: 'og:title',
+      content: title,
+    });
+
+    this.metaService.updateTag({
+      property: 'og:description',
+      content: description,
+    });
+
+    this.metaService.updateTag({
+      property: 'og:type',
+      content: 'website',
+    });
   }
 }

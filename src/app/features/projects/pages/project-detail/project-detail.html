@@ -252,6 +252,50 @@
       }
     </section>
 
+    <nav class="border-t border-line bg-surface" aria-label="Navegação entre projetos">
+      <div class="mx-auto grid max-w-6xl gap-4 px-6 py-10 sm:grid-cols-2">
+        <div>
+          @if (previousProject(); as previous) {
+            <a
+              class="group flex h-full items-center gap-4 rounded-2xl border border-line bg-canvas p-5 transition hover:border-accent/50"
+              [routerLink]="['/projetos', previous.slug]"
+              [attr.aria-label]="'Abrir projeto anterior: ' + previous.title"
+            >
+              <svg data-p-icon="chevron-left" [size]="20" aria-hidden="true"></svg>
+
+              <span>
+                <span class="block text-sm text-muted"> Projeto anterior </span>
+
+                <span class="mt-1 block font-semibold text-ink">
+                  {{ previous.title }}
+                </span>
+              </span>
+            </a>
+          }
+        </div>
+
+        <div>
+          @if (nextProject(); as next) {
+            <a
+              class="group flex h-full items-center justify-between gap-4 rounded-2xl border border-line bg-canvas p-5 text-right transition hover:border-accent/50"
+              [routerLink]="['/projetos', next.slug]"
+              [attr.aria-label]="'Abrir próximo projeto: ' + next.title"
+            >
+              <span class="ml-auto">
+                <span class="block text-sm text-muted"> Próximo projeto </span>
+
+                <span class="mt-1 block font-semibold text-ink">
+                  {{ next.title }}
+                </span>
+              </span>
+
+              <svg data-p-icon="chevron-right" [size]="20" aria-hidden="true"></svg>
+            </a>
+          }
+        </div>
+      </div>
+    </nav>
+
     <p-dialog
       [visible]="selectedImage() !== null"
       (visibleChange)="onDialogVisibilityChange($event)"
