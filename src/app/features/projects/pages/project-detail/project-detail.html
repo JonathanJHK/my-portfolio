@@ -49,7 +49,12 @@
       </div>
     </section>
 
-    <section class="border-y border-line bg-surface">
+    <section
+      pAnimateOnScroll
+      enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+      [once]="true"
+      class="border-y border-line bg-surface"
+    >
       <div class="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.2fr_0.8fr] lg:py-20">
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Minha atuação</p>
@@ -82,7 +87,12 @@
 
     <section class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
       <div class="grid gap-5 md:grid-cols-2">
-        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+        <article
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 zoom-in-50 slide-in-from-t-20 animate-duration-1000"
+          [once]="true"
+          class="rounded-3xl border border-line bg-surface p-7 sm:p-8"
+        >
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Contexto</p>
 
           <h2 class="mt-4 font-display text-3xl font-bold text-ink">
@@ -94,7 +104,12 @@
           </p>
         </article>
 
-        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+        <article
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-r-20 animate-duration-1000"
+          [once]="true"
+          class="rounded-3xl border border-line bg-surface p-7 sm:p-8"
+        >
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Desafio</p>
 
           <h2 class="mt-4 font-display text-3xl font-bold text-ink">O problema enfrentado</h2>
@@ -106,7 +121,12 @@
       </div>
 
       <div class="mt-5 grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+        <article
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 slide-in-from-l-20 animate-duration-1000"
+          [once]="true"
+          class="rounded-3xl border border-line bg-surface p-7 sm:p-8"
+        >
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Solução</p>
 
           <h2 class="mt-4 font-display text-3xl font-bold text-ink">Como desenvolvi a solução</h2>
@@ -117,6 +137,9 @@
         </article>
 
         <aside
+          pAnimateOnScroll
+          enterClass="animate-enter fade-in-10 spin-in-45 slide-in-from-t-16 animate-duration-1000"
+          [once]="true"
           class="rounded-3xl bg-ink p-7 text-surface sm:p-8"
           aria-labelledby="highlights-title"
         >
@@ -139,7 +162,12 @@
         </aside>
       </div>
 
-      <article class="mt-5 rounded-3xl border border-accent/30 bg-accent-soft p-7 sm:p-8">
+      <article
+        pAnimateOnScroll
+        enterClass="animate-enter fade-in-10 spin-in-[-45deg] slide-in-from-b-16 animate-duration-1000"
+        [once]="true"
+        class="mt-5 rounded-3xl border border-accent/30 bg-accent-soft p-7 sm:p-8"
+      >
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-dark">
           Aprendizados
         </p>
@@ -155,7 +183,13 @@
     </section>
 
     @if (item.gallery.length) {
-      <section class="border-y border-line bg-surface" aria-labelledby="gallery-title">
+      <section
+        pAnimateOnScroll
+        enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+        [once]="true"
+        class="border-y border-line bg-surface"
+        aria-labelledby="gallery-title"
+      >
         <div class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Galeria</p>
 
@@ -230,7 +264,12 @@
       </section>
     }
 
-    <section class="mx-auto max-w-6xl px-6 py-16 lg:py-20">
+    <section
+      pAnimateOnScroll
+      enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+      [once]="true"
+      class="mx-auto max-w-6xl px-6 py-16 lg:py-20"
+    >
       <h2 class="font-display text-4xl font-bold text-ink">Tecnologias utilizadas</h2>
 
       <ul class="mt-7 flex flex-wrap gap-3">
@@ -262,6 +301,9 @@
         <div>
           @if (previousProject(); as previous) {
             <a
+              pAnimateOnScroll
+              enterClass="animate-enter fade-in-10 zoom-in-50 animate-duration-1000"
+              [once]="true"
               class="group flex h-full items-center gap-4 rounded-2xl border border-line bg-canvas p-5 transition hover:border-accent/50"
               [routerLink]="['/projetos', previous.slug]"
               [attr.aria-label]="'Abrir projeto anterior: ' + previous.title"
@@ -282,6 +324,9 @@
         <div>
           @if (nextProject(); as next) {
             <a
+              pAnimateOnScroll
+              enterClass="animate-enter fade-in-10 zoom-in-50 animate-duration-1000"
+              [once]="true"
               class="group flex h-full items-center justify-between gap-4 rounded-2xl border border-line bg-canvas p-5 text-right transition hover:border-accent/50"
               [routerLink]="['/projetos', next.slug]"
               [attr.aria-label]="'Abrir próximo projeto: ' + next.title"

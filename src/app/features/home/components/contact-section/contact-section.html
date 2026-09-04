@@ -18,6 +18,9 @@
         @for (contact of contactLinks; track contact.label) {
           <li>
             <a
+              pAnimateOnScroll
+              enterClass="animate-enter fade-in-10 zoom-in-75 animate-duration-1500"
+              [once]="true"
               class="group flex items-center justify-between gap-5 rounded-3xl border border-surface/20 p-6 transition-colors hover:border-accent-soft hover:bg-surface/5"
               [href]="contact.url"
               [attr.target]="contact.url.startsWith('http') ? '_blank' : null"

@@ -14,11 +14,19 @@ import { PROJECTS } from '@core/data/projects.data';
 import { ProjectImage } from '@core/models/project.model';
 import { ChevronLeft } from '@primeicons/angular/chevron-left';
 import { ChevronRight } from '@primeicons/angular/chevron-right';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, DialogModule, NgOptimizedImage, ChevronLeft, ChevronRight],
+  imports: [
+    RouterLink,
+    DialogModule,
+    NgOptimizedImage,
+    ChevronLeft,
+    ChevronRight,
+    AnimateOnScrollModule,
+  ],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

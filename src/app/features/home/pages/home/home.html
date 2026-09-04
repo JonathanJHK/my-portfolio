@@ -1,8 +1,43 @@
 <main id="main-content" tabindex="-1">
   <app-hero />
-  <app-about />
-  <app-projects-section />
-  <app-experience-section />
-  <app-skills-section />
-  <app-contact-section />
+
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+    [once]="true"
+  >
+    <app-about />
+  </div>
+
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+    [once]="true"
+  >
+    <app-projects-section />
+  </div>
+
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+    [once]="true"
+  >
+    <app-experience-section />
+  </div>
+
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+    [once]="true"
+  >
+    <app-skills-section />
+  </div>
+
+  <div
+    pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+    [once]="true"
+  >
+    <app-contact-section />
+  </div>
 </main>

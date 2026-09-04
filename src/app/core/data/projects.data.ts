@@ -52,9 +52,29 @@ export const PROJECTS = [
     },
     gallery: [
       {
-        src: '/images/projects/gestao-fisioterapia/architecture.svg',
-        alt: 'Diagrama da arquitetura da plataforma de gestão para fisioterapia',
-        caption: 'Organização do Front-end e integração com a API Spring Boot.',
+        src: 'images/projects/gestao-fisioterapia/dashboard.webp',
+        alt: 'Dashboard da plataforma de gestão para fisioterapia',
+        caption: 'Visão geral de consultas, indicadores e notificações.',
+      },
+      {
+        src: 'images/projects/gestao-fisioterapia/login.webp',
+        alt: 'Tela de acesso da plataforma',
+        caption: 'Fluxo de autenticação e cadastro de usuários.',
+      },
+      {
+        src: 'images/projects/gestao-fisioterapia/local-service-settings.webp',
+        alt: 'Configuração de atendimento presencial',
+        caption: 'Gestão de disponibilidade, endereço e horários.',
+      },
+      {
+        src: 'images/projects/gestao-fisioterapia/home-service-area.webp',
+        alt: 'Configuração da área de atendimento domiciliar',
+        caption: 'Definição visual da região disponível para atendimento.',
+      },
+      {
+        src: 'images/projects/gestao-fisioterapia/professionals-list.webp',
+        alt: 'Listagem de profissionais cadastrados',
+        caption: 'Gerenciamento de profissionais, empresas e aprovações.',
       },
     ],
   },
