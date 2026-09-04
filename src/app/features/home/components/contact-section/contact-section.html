@@ -1,0 +1,48 @@
+<section id="contato" class="scroll-mt-20 bg-ink text-surface" aria-labelledby="contact-title">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-soft">Contato</p>
+
+        <h2 id="contact-title" class="mt-4 font-display text-4xl font-bold sm:text-5xl">
+          Vamos conversar sobre tecnologia e novos projetos?
+        </h2>
+
+        <p class="mt-6 max-w-xl text-lg leading-8 text-surface/75">
+          Estou aberto a oportunidades de desenvolvimento de software, colaboração em equipes e
+          projetos nos quais eu possa contribuir e continuar evoluindo profissionalmente.
+        </p>
+      </div>
+
+      <ul class="grid gap-4">
+        @for (contact of contactLinks; track contact.label) {
+          <li>
+            <a
+              class="group flex items-center justify-between gap-5 rounded-3xl border border-surface/20 p-6 transition-colors hover:border-accent-soft hover:bg-surface/5"
+              [href]="contact.url"
+              [attr.target]="contact.url.startsWith('http') ? '_blank' : null"
+              [attr.rel]="contact.url.startsWith('http') ? 'noreferrer' : null"
+            >
+              <span>
+                <strong class="block text-lg text-surface">
+                  {{ contact.label }}
+                </strong>
+
+                <span class="mt-1 block text-sm leading-6 text-surface/65">
+                  {{ contact.description }}
+                </span>
+              </span>
+
+              <span
+                class="text-2xl text-accent-soft transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
