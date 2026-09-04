@@ -1,0 +1,53 @@
+<section id="tecnologias" class="scroll-mt-20 bg-canvas" aria-labelledby="skills-title">
+  <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
+    <div class="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+          Tecnologias e competências
+        </p>
+
+        <h2 id="skills-title" class="mt-4 font-display text-4xl font-bold text-ink sm:text-5xl">
+          Conhecimentos aplicados em diferentes partes do produto.
+        </h2>
+      </div>
+
+      <p class="max-w-2xl text-lg leading-8 text-muted lg:justify-self-end">
+        Minha experiência principal está no desenvolvimento web, complementada por atuação com APIs,
+        bancos de dados, visualização de dados e práticas de construção de software.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2">
+      @for (group of skillGroups; track group.title; let index = $index) {
+        <article class="rounded-3xl border border-line bg-surface p-7 sm:p-8">
+          <div class="flex items-start gap-5">
+            <span class="font-display text-2xl font-bold text-accent" aria-hidden="true">
+              {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
+            </span>
+
+            <div>
+              <h3 class="font-display text-3xl font-bold text-ink">
+                {{ group.title }}
+              </h3>
+
+              <p class="mt-2 leading-7 text-muted">
+                {{ group.description }}
+              </p>
+            </div>
+          </div>
+
+          <ul
+            class="mt-7 flex flex-wrap gap-2"
+            [attr.aria-label]="'Conhecimentos de ' + group.title"
+          >
+            @for (item of group.items; track item) {
+              <li class="rounded-full border border-line bg-canvas px-3 py-1.5 text-sm text-muted">
+                {{ item }}
+              </li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>
