@@ -1,8 +1,19 @@
 <footer class="border-t border-line bg-surface">
   <div
-    class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between"
+    class="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between"
   >
-    <p>© {{ currentYear }} Jonathan Kinjo.</p>
-    <p>Desenvolvido com Angular, PrimeNG e Tailwind CSS.</p>
+    <div>
+      <p>© {{ currentYear }} Jonathan Kinjo.</p>
+
+      <p class="mt-1">Desenvolvido com Angular, PrimeNG e Tailwind CSS.</p>
+    </div>
+
+    <a
+      class="w-fit font-semibold text-ink transition-colors hover:text-accent"
+      href="#inicio"
+      aria-label="Voltar ao início da página"
+    >
+      Voltar ao início ↑
+    </a>
   </div>
 </footer>
