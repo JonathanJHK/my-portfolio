@@ -1,4 +1,4 @@
-<main class="bg-canvas">
+<main id="main-content" tabindex="-1" class="bg-canvas" class="bg-canvas">
   @if (project(); as item) {
     <section class="mx-auto max-w-6xl px-6 py-16 lg:py-24">
       <a
@@ -15,7 +15,9 @@
             {{ item.category }}
           </p>
 
-          <h1 class="mt-4 font-display text-5xl leading-tight font-bold text-ink sm:text-6xl">
+          <h1
+            class="mt-4 font-display text-4xl leading-tight font-bold text-ink sm:text-5xl lg:text-6xl"
+          >
             {{ item.title }}
           </h1>
 
@@ -32,13 +34,16 @@
           </ul>
         </div>
 
-        <figure class="aspect-video overflow-hidden rounded-3xl border border-line bg-surface">
+        <figure
+          class="relative aspect-video overflow-hidden rounded-3xl border border-line bg-surface"
+        >
           <img
-            class="h-full w-full object-cover object-top"
-            [src]="item.cover.src"
+            class="object-cover object-top"
+            [ngSrc]="item.cover.src"
             [alt]="item.cover.alt"
-            decoding="async"
-            fetchpriority="high"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            fill
+            priority
           />
         </figure>
       </div>

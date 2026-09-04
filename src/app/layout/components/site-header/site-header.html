@@ -1,24 +1,100 @@
 <header class="sticky top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur">
-  <div
-    class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:h-20 md:flex-row md:items-center md:justify-between md:py-0"
-  >
+  <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
     <a
-      routerLink="/"
       class="font-display text-xl font-bold text-ink transition-colors hover:text-accent"
+      routerLink="/"
       aria-label="Ir para o início"
     >
       Jonathan Kinjo
     </a>
 
     <nav
-      class="flex gap-5 overflow-x-auto text-sm font-medium text-muted"
+      class="hidden items-center gap-6 text-sm font-medium text-muted md:flex"
       aria-label="Navegação principal"
     >
-      <a routerLink="/" fragment="sobre" class="hover:text-accent">Sobre</a>
-      <a routerLink="/" fragment="projetos" class="hover:text-accent">Projetos</a>
-      <a routerLink="/" fragment="experiencia" class="hover:text-accent">Experiência</a>
-      <a routerLink="/" fragment="tecnologias" class="hover:text-accent"> Tecnologias </a>
-      <a routerLink="/" fragment="contato" class="hover:text-accent">Contato</a>
+      <a routerLink="/" fragment="sobre" class="transition-colors hover:text-accent"> Sobre </a>
+
+      <a routerLink="/" fragment="projetos" class="transition-colors hover:text-accent">
+        Projetos
+      </a>
+
+      <a routerLink="/" fragment="experiencia" class="transition-colors hover:text-accent">
+        Experiência
+      </a>
+
+      <a routerLink="/" fragment="tecnologias" class="transition-colors hover:text-accent">
+        Tecnologias
+      </a>
+
+      <a routerLink="/" fragment="contato" class="transition-colors hover:text-accent"> Contato </a>
     </nav>
+
+    <button
+      type="button"
+      class="inline-flex size-11 items-center justify-center rounded-full border border-line bg-surface text-ink transition-colors hover:border-accent hover:text-accent md:hidden"
+      aria-label="Abrir menu de navegação"
+      aria-controls="mobile-navigation"
+      [attr.aria-expanded]="mobileMenuVisible()"
+      (click)="openMobileMenu()"
+    >
+      <svg data-p-icon="bars" [size]="22" aria-hidden="true"></svg>
+    </button>
   </div>
 </header>
+
+<p-drawer
+  header="Navegação"
+  position="right"
+  [modal]="true"
+  [blockScroll]="true"
+  [visible]="mobileMenuVisible()"
+  (visibleChange)="mobileMenuVisible.set($event)"
+  [style]="{ width: 'min(85vw, 22rem)' }"
+>
+  <nav id="mobile-navigation" class="flex flex-col gap-2" aria-label="Navegação mobile">
+    <a
+      class="rounded-xl px-4 py-3 font-medium text-ink hover:bg-accent-soft"
+      routerLink="/"
+      fragment="sobre"
+      (click)="closeMobileMenu()"
+    >
+      Sobre
+    </a>
+
+    <a
+      class="rounded-xl px-4 py-3 font-medium text-ink hover:bg-accent-soft"
+      routerLink="/"
+      fragment="projetos"
+      (click)="closeMobileMenu()"
+    >
+      Projetos
+    </a>
+
+    <a
+      class="rounded-xl px-4 py-3 font-medium text-ink hover:bg-accent-soft"
+      routerLink="/"
+      fragment="experiencia"
+      (click)="closeMobileMenu()"
+    >
+      Experiência
+    </a>
+
+    <a
+      class="rounded-xl px-4 py-3 font-medium text-ink hover:bg-accent-soft"
+      routerLink="/"
+      fragment="tecnologias"
+      (click)="closeMobileMenu()"
+    >
+      Tecnologias
+    </a>
+
+    <a
+      class="rounded-xl px-4 py-3 font-medium text-ink hover:bg-accent-soft"
+      routerLink="/"
+      fragment="contato"
+      (click)="closeMobileMenu()"
+    >
+      Contato
+    </a>
+  </nav>
+</p-drawer>

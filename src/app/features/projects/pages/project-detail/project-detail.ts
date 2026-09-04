@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -17,7 +18,7 @@ import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [RouterLink, DialogModule, ChevronLeft, ChevronRight],
+  imports: [RouterLink, DialogModule, NgOptimizedImage, ChevronLeft, ChevronRight],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -4,14 +4,14 @@
   class="group flex h-full flex-col rounded-3xl border border-line bg-surface p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_24px_60px_-36px_rgba(33,29,24,0.5)] sm:p-8"
 >
   <figure
-    class="-mx-6 -mt-6 mb-6 aspect-video overflow-hidden rounded-t-3xl border-b border-line bg-accent-soft sm:-mx-8 sm:-mt-8 sm:mb-8"
+    class="relative -mx-6 -mt-6 mb-6 aspect-video overflow-hidden rounded-t-3xl border-b border-line bg-accent-soft sm:-mx-8 sm:-mt-8 sm:mb-8"
   >
     <img
-      class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-      [src]="item.cover.src"
+      class="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+      [ngSrc]="item.cover.src"
       [alt]="item.cover.alt"
-      loading="lazy"
-      decoding="async"
+      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+      fill
     />
   </figure>
   <div class="flex flex-wrap items-center justify-between gap-3 text-sm text-muted">
