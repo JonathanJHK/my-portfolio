@@ -19,10 +19,14 @@ export const routes: Routes = [
             (component) => component.ProjectDetail,
           ),
       },
+      {
+        path: '**',
+        loadComponent: () =>
+          import('./features/not-found/pages/not-found/not-found').then(
+            (component) => component.NotFound,
+          ),
+        title: 'Página não encontrada | Jonathan Kinjo',
+      },
     ],
-  },
-  {
-    path: '**',
-    redirectTo: '',
   },
 ];
