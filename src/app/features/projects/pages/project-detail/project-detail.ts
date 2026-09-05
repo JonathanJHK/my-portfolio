@@ -8,10 +8,10 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { PROJECTS } from '@core/data/projects.data';
 import { ProjectImage } from '@core/models/project.model';
+import { SeoService } from '@core/services/seo.service';
 import { ChevronLeft } from '@primeicons/angular/chevron-left';
 import { ChevronRight } from '@primeicons/angular/chevron-right';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
@@ -38,8 +38,7 @@ export class ProjectDetail {
   protected readonly selectedImage = signal<ProjectImage | null>(null);
   protected readonly selectedGalleryImage = signal<ProjectImage | null>(null);
 
-  private readonly titleService = inject(Title);
-  private readonly metaService = inject(Meta);
+  private readonly seo = inject(SeoService);
 
   // Busca o projeto correspondente ao slug informado na lista global de projetos.
   // O resultado é um valor computado, que reage automaticamente a mudanças no slug.
@@ -106,7 +105,11 @@ export class ProjectDetail {
         ? project.summary
         : 'O projeto solicitado não foi encontrado no portfólio de Jonathan Heidy Kinjo.';
 
-      this.updateMetadata(title, description);
+      this.seo.update({
+        title,
+        description,
+        path: project ? `/projetos/${project.slug}/` : '/projetos/',
+      });
     });
   }
 
@@ -157,29 +160,5 @@ export class ProjectDetail {
 
     this.selectedImage.set(nextImage);
     this.selectedGalleryImage.set(nextImage);
-  }
-
-  private updateMetadata(title: string, description: string): void {
-    this.titleService.setTitle(title);
-
-    this.metaService.updateTag({
-      name: 'description',
-      content: description,
-    });
-
-    this.metaService.updateTag({
-      property: 'og:title',
-      content: title,
-    });
-
-    this.metaService.updateTag({
-      property: 'og:description',
-      content: description,
-    });
-
-    this.metaService.updateTag({
-      property: 'og:type',
-      content: 'website',
-    });
   }
 }

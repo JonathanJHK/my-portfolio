@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { SeoService } from '@core/services/seo.service';
 import { About } from '@features/home/components/about/about';
 import { ContactSection } from '@features/home/components/contact-section/contact-section';
 import { ExperienceSection } from '@features/home/components/experience-section/experience-section';
@@ -22,4 +23,15 @@ import { AnimateOnScrollModule } from 'primeng/animateonscroll';
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Home {}
+export class Home {
+  private readonly seo = inject(SeoService);
+
+  constructor() {
+    this.seo.update({
+      title: 'Jonathan Heidy Kinjo | Desenvolvedor Web',
+      description:
+        'Portfólio de Jonathan Heidy Kinjo, engenheiro de software com experiência em aplicações web, APIs, bancos de dados e soluções orientadas a dados.',
+      path: '/',
+    });
+  }
+}
