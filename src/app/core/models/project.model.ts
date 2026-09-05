@@ -20,6 +20,7 @@ export interface ProjectCaseStudy {
 
 export interface PortfolioProject {
   readonly slug: ProjectSlug;
+  readonly featured: boolean;
   readonly title: string;
   readonly category: string;
   readonly period: string;

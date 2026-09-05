@@ -1,0 +1,34 @@
+<main class="min-h-screen bg-canvas">
+  <section class="mx-auto max-w-6xl px-6 py-16 lg:py-24" aria-labelledby="projects-list-title">
+    <a
+      class="inline-flex items-center gap-2 font-semibold text-accent transition-colors hover:text-accent-dark"
+      routerLink="/"
+      fragment="projetos"
+    >
+      <i class="pi pi-arrow-left" aria-hidden="true"></i>
+      Voltar ao início
+    </a>
+
+    <header class="mt-10 max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Portfólio</p>
+
+      <h1
+        id="projects-list-title"
+        class="mt-4 font-display text-5xl font-bold text-ink sm:text-6xl"
+      >
+        Todos os projetos
+      </h1>
+
+      <p class="mt-6 text-lg leading-8 text-muted">
+        Uma seleção de projetos profissionais, acadêmicos e técnicos envolvendo interfaces, APIs,
+        regras de negócio, bancos de dados e experiência do usuário.
+      </p>
+    </header>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      @for (project of projects; track project.slug) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </section>
+</main>

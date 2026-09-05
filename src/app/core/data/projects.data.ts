@@ -3,6 +3,7 @@ import { PortfolioProject } from '../models/project.model';
 export const PROJECTS = [
   {
     slug: 'gestao-fisioterapia',
+    featured: true,
     title: 'Plataforma de Gestão para Fisioterapia',
     category: 'Saúde e gestão de atendimentos',
     period: 'Maio de 2024 a abril de 2025',
@@ -85,6 +86,7 @@ export const PROJECTS = [
   },
   {
     slug: 'monitoramento-incendios',
+    featured: true,
     title: 'Plataforma de Monitoramento de Incêndios',
     category: 'Meio ambiente e análise de ocorrências',
     period: 'Abril de 2025 a julho de 2025',
@@ -166,6 +168,7 @@ export const PROJECTS = [
   },
   {
     slug: 'gestao-fiscal',
+    featured: true,
     title: 'Gestão Fiscal',
     category: 'Estoque e emissão de notas fiscais',
     period: '15 a 21 de agosto de 2026',

@@ -13,6 +13,14 @@ export const routes: Routes = [
         title: 'Jonathan Heidy Kinjo | Desenvolvedor Web',
       },
       {
+        path: 'projetos',
+        loadComponent: () =>
+          import('./features/projects/pages/projects-list/projects-list').then(
+            (component) => component.ProjectsList,
+          ),
+        title: 'Projetos | Jonathan Heidy Kinjo',
+      },
+      {
         path: 'projetos/:slug',
         loadComponent: () =>
           import('./features/projects/pages/project-detail/project-detail').then(

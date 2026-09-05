@@ -18,9 +18,19 @@
     </div>
 
     <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      @for (project of projects; track project.slug) {
+      @for (project of featuredProjects; track project.slug) {
         <app-project-card [project]="project" />
       }
+    </div>
+
+    <div class="mt-10 flex justify-center">
+      <a
+        class="inline-flex items-center gap-2 rounded-xl border-2 border-accent px-6 py-3 font-semibold text-accent transition-colors hover:bg-accent hover:text-white"
+        routerLink="/projetos"
+      >
+        Ver todos os projetos
+        <i class="pi pi-arrow-right mt-1" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
 </section>

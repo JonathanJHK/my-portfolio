@@ -4,12 +4,12 @@ import { PROJECTS } from '@core/data/projects.data';
 import { ProjectCard } from '@shared/components/project-card/project-card';
 
 @Component({
-  selector: 'app-projects-section',
+  selector: 'app-projects-list',
   imports: [ProjectCard, RouterLink],
-  templateUrl: './projects-section.html',
-  styleUrl: './projects-section.scss',
+  templateUrl: './projects-list.html',
+  styleUrl: './projects-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProjectsSection {
-  protected readonly featuredProjects = PROJECTS.filter((project) => project.featured).slice(0, 3);
+export class ProjectsList {
+  protected readonly projects = PROJECTS;
 }
