@@ -10,7 +10,7 @@ export const routes: Routes = [
         path: '',
         loadComponent: () =>
           import('./features/home/pages/home/home').then((component) => component.Home),
-        title: 'Jonathan Kinjo | Desenvolvedor Web',
+        title: 'Jonathan Heidy Kinjo | Desenvolvedor Web',
       },
       {
         path: 'projetos/:slug',
@@ -25,7 +25,7 @@ export const routes: Routes = [
           import('./features/not-found/pages/not-found/not-found').then(
             (component) => component.NotFound,
           ),
-        title: 'Página não encontrada | Jonathan Kinjo',
+        title: 'Página não encontrada | Jonathan Heidy Kinjo',
       },
     ],
   },

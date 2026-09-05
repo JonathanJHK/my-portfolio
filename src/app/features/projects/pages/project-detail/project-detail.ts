@@ -99,12 +99,12 @@ export class ProjectDetail {
       const project = this.project();
 
       const title = project
-        ? `${project.title} | Jonathan Kinjo`
-        : 'Projeto não encontrado | Jonathan Kinjo';
+        ? `${project.title} | Jonathan Heidy Kinjo`
+        : 'Projeto não encontrado | Jonathan Heidy Kinjo';
 
       const description = project
         ? project.summary
-        : 'O projeto solicitado não foi encontrado no portfólio de Jonathan Kinjo.';
+        : 'O projeto solicitado não foi encontrado no portfólio de Jonathan Heidy Kinjo.';
 
       this.updateMetadata(title, description);
     });

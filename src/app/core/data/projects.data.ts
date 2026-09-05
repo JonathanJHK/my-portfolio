@@ -76,6 +76,11 @@ export const PROJECTS = [
         alt: 'Listagem de profissionais cadastrados',
         caption: 'Gerenciamento de profissionais, empresas e aprovações.',
       },
+      {
+        src: '/images/projects/gestao-fisioterapia/architecture.svg',
+        alt: 'Diagrama da arquitetura da plataforma de gestão para fisioterapia',
+        caption: 'Integração entre Front-end, API e banco de dados.',
+      },
     ],
   },
   {
