@@ -23,8 +23,8 @@
               [once]="true"
               class="group flex items-center justify-between gap-5 rounded-3xl border border-surface/20 p-6 transition-colors hover:border-accent-soft hover:bg-surface/5"
               [href]="contact.url"
-              [attr.target]="contact.url.startsWith('http') ? '_blank' : null"
-              [attr.rel]="contact.url.startsWith('http') ? 'noopener noreferrer' : null"
+              [attr.target]="contact.openInNewTab ? '_blank' : null"
+              [attr.rel]="contact.openInNewTab ? 'noopener noreferrer' : null"
             >
               <span>
                 <strong class="block text-lg text-surface">
